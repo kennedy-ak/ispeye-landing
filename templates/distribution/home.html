@@ -1,0 +1,317 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}iSpeye Beta — AI Cataract Screening (Testing Phase){% endblock %}
+
+{% block content %}
+
+<!-- Hero -->
+<section class="hero-section d-flex align-items-center" id="hero">
+  <div class="container py-5">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-7">
+        <span class="badge text-bg-warning mb-3 px-3 py-2 fw-semibold">
+          <i class="bi bi-cone-striped me-1"></i>Active Beta — v1.3.1
+        </span>
+        <h1 class="display-4 fw-bold text-white lh-sm mb-4">
+          Helping Detect<br>Cataracts Earlier —<br>
+          <span class="hero-accent">We Need Your Help</span>
+        </h1>
+        <p class="lead text-white-75 mb-5">
+          iSpeye is an AI-powered cataract screening app currently in active beta testing.
+          We're a small team building something we believe can make a difference —
+          and your feedback as a tester is shaping what it becomes.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#about" class="btn btn-outline-light btn-lg px-4">
+            <i class="bi bi-info-circle me-2"></i>What We're Building
+          </a>
+          <a href="#download" class="btn btn-success btn-lg px-4">
+            <i class="bi bi-download me-2"></i>Get Beta Access
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-5 d-none d-lg-flex justify-content-center">
+        <div class="hero-icon-box">
+          <i class="bi bi-eye-fill hero-eye-icon"></i>
+          <div class="hero-ring ring-1"></div>
+          <div class="hero-ring ring-2"></div>
+          <div class="hero-ring ring-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Beta status bar -->
+<div class="stats-bar py-4 bg-white border-bottom shadow-sm">
+  <div class="container">
+    <div class="row text-center gy-3">
+      <div class="col-4">
+        <div class="stat-number">Beta</div>
+        <div class="stat-label">v1.3.1 — Active Testing</div>
+      </div>
+      <div class="col-4">
+        <div class="stat-number">Dual AI</div>
+        <div class="stat-label">ResNet50 + DenseNet121</div>
+      </div>
+      <div class="col-4">
+        <div class="stat-number">Free</div>
+        <div class="stat-label">For Approved Testers</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- About / What we're building -->
+<section class="py-6 bg-light" id="about">
+  <div class="container">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-6">
+        <span class="section-label">The Problem We're Solving</span>
+        <h2 class="section-title">Cataracts Are the Leading Cause of Blindness</h2>
+        <p class="text-muted mb-3">
+          Cataracts account for over <strong>51% of world blindness</strong> — affecting an estimated
+          94 million people globally. In Sub-Saharan Africa, limited access to ophthalmologists means
+          most cases go undetected until vision loss is severe.
+        </p>
+        <p class="text-muted mb-4">
+          The good news: <strong>90% of visual impairment from cataracts is preventable</strong> with
+          early detection and timely treatment. We believe a smartphone can be the first line of defense.
+        </p>
+        <div class="d-flex gap-4 mt-4">
+          <div class="text-center">
+            <div class="impact-number">51%</div>
+            <div class="impact-label">of world blindness</div>
+          </div>
+          <div class="text-center">
+            <div class="impact-number">94M</div>
+            <div class="impact-label">people affected</div>
+          </div>
+          <div class="text-center">
+            <div class="impact-number">90%</div>
+            <div class="impact-label">preventable</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="about-card p-4 p-lg-5">
+          <div class="mb-3">
+            <i class="bi bi-cone-striped text-warning fs-1"></i>
+          </div>
+          <h4 class="fw-bold mb-3">We're Still Building — And Testing</h4>
+          <p class="text-muted mb-3">
+            iSpeye is in active beta. The core AI works — it uses a ResNet50 and DenseNet121 ensemble
+            to analyze eye photographs for cataract indicators — but we're still refining accuracy,
+            improving the user experience, and ironing out bugs.
+          </p>
+          <p class="text-muted mb-0">
+            As a beta tester, you get early access in exchange for honest feedback.
+            Found something broken? <a href="{% url 'report_bug' %}" class="text-decoration-none fw-semibold">Tell us</a> —
+            every report helps.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What we're testing -->
+<section class="py-6" id="features">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="section-label">What We're Testing</span>
+      <h2 class="section-title">Core Features in Beta</h2>
+      <p class="text-muted mx-auto" style="max-width: 520px;">
+        These features are in the current build. Some may be rough around the edges — that's why you're here.
+      </p>
+    </div>
+    <div class="row gy-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-card h-100 p-4">
+          <div class="feature-icon bg-primary-soft mb-3">
+            <i class="bi bi-cpu-fill text-primary"></i>
+          </div>
+          <h5 class="fw-bold mb-2">AI Cataract Analysis</h5>
+          <p class="text-muted small mb-2">
+            Dual-model ensemble (ResNet50 + DenseNet121) analyzes eye photos and returns a screening result.
+          </p>
+          <span class="badge bg-warning text-dark small">Testing accuracy</span>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-card h-100 p-4">
+          <div class="feature-icon bg-success-soft mb-3">
+            <i class="bi bi-camera-fill text-success"></i>
+          </div>
+          <h5 class="fw-bold mb-2">Photo Capture</h5>
+          <p class="text-muted small mb-2">
+            Take a photo directly in-app or upload from your gallery. We're testing image quality handling.
+          </p>
+          <span class="badge bg-warning text-dark small">In testing</span>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-card h-100 p-4">
+          <div class="feature-icon bg-warning-soft mb-3">
+            <i class="bi bi-person-circle text-warning"></i>
+          </div>
+          <h5 class="fw-bold mb-2">User Accounts</h5>
+          <p class="text-muted small mb-2">
+            Sign up, log in, and access your screening history. Cloud auth via Supabase.
+          </p>
+          <span class="badge bg-success small">Working</span>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-card h-100 p-4">
+          <div class="feature-icon bg-info-soft mb-3">
+            <i class="bi bi-clock-history text-info"></i>
+          </div>
+          <h5 class="fw-bold mb-2">Screening History</h5>
+          <p class="text-muted small mb-2">
+            Past screenings are saved to your account. We're testing data persistence and display.
+          </p>
+          <span class="badge bg-warning text-dark small">In testing</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="py-6 bg-light" id="how-it-works">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="section-label">The Process</span>
+      <h2 class="section-title">How iSpeye Works</h2>
+      <p class="text-muted">Three steps — and then we need your honest feedback on all three.</p>
+    </div>
+    <div class="row gy-5 justify-content-center">
+      <div class="col-md-4">
+        <div class="step-card text-center p-4 h-100">
+          <div class="step-number">1</div>
+          <div class="mb-3 mt-2">
+            <i class="bi bi-camera-fill fs-1 text-primary"></i>
+          </div>
+          <h5 class="fw-bold mb-2">Capture</h5>
+          <p class="text-muted small mb-0">
+            Open iSpeye and take a clear, close-up photo of the eye. Try both camera capture and gallery upload — and let us know which works better.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="step-card text-center p-4 h-100">
+          <div class="step-number">2</div>
+          <div class="mb-3 mt-2">
+            <i class="bi bi-cpu fs-1 text-primary"></i>
+          </div>
+          <h5 class="fw-bold mb-2">Analyze</h5>
+          <p class="text-muted small mb-0">
+            The photo is sent to our AI backend. ResNet50 and DenseNet121 both process it and their predictions are combined. Note the response time — report if it's slow.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="step-card text-center p-4 h-100">
+          <div class="step-number">3</div>
+          <div class="mb-3 mt-2">
+            <i class="bi bi-clipboard2-check-fill fs-1 text-primary"></i>
+          </div>
+          <h5 class="fw-bold mb-2">Review &amp; Report</h5>
+          <p class="text-muted small mb-0">
+            View your result. Does it make sense? Is the result clear? Then <a href="{% url 'report_bug' %}" class="text-decoration-none">report what you found</a> — good or bad.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="alert alert-danger border-0 rounded-3 mt-5 text-center" role="alert">
+      <i class="bi bi-exclamation-triangle-fill me-2"></i>
+      <strong>Beta disclaimer:</strong> iSpeye is <em>not</em> a medical device and results should <em>never</em> be used for diagnosis or treatment decisions.
+      This is a research and testing tool only.
+    </div>
+  </div>
+</section>
+
+<!-- Download / Access Gate -->
+<section class="py-6" id="download">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7">
+        <div class="download-card p-4 p-lg-5">
+          <div class="text-center mb-4">
+            <span class="section-label">Closed Beta</span>
+            <h2 class="section-title mb-2">Download the Beta Build</h2>
+            <p class="text-muted">
+              Access is limited to approved testers. Enter your email — if you're on the list,
+              you'll go straight to the download. Otherwise you can apply to join the test group.
+            </p>
+          </div>
+
+          {% if access_error %}
+          <div class="alert alert-danger rounded-3 mb-4" role="alert">
+            <i class="bi bi-x-circle me-2"></i>{{ access_error }}
+          </div>
+          {% endif %}
+
+          <form method="post" action="{% url 'check_email' %}">
+            {% csrf_token %}
+            <label class="form-label fw-semibold" for="{{ form.email.id_for_label }}">
+              Email Address
+            </label>
+            {{ form.email }}
+            {% for error in form.email.errors %}
+              <div class="text-danger small mt-1">{{ error }}</div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary btn-lg w-100 mt-3">
+              <i class="bi bi-arrow-right-circle me-2"></i>Check Access
+            </button>
+          </form>
+
+          <div class="text-center mt-3">
+            <small class="text-muted">
+              Not on the list?
+              <a href="{% url 'apply' %}" class="text-decoration-none fw-semibold">Request to Join Beta</a>
+            </small>
+          </div>
+
+          <hr class="my-4" />
+
+          <div class="text-center">
+            <p class="text-muted small mb-2">Already testing the app?</p>
+            <a href="{% url 'report_bug' %}" class="btn btn-outline-danger btn-sm px-4">
+              <i class="bi bi-bug me-2"></i>Report a Bug
+            </a>
+          </div>
+
+          <div class="mt-4 p-3 rounded-3 bg-light border">
+            <div class="row text-center gy-2">
+              <div class="col-4 small text-muted">
+                <i class="bi bi-android2 text-success d-block fs-5 mb-1"></i>Android 8.0+
+              </div>
+              <div class="col-4 small text-muted">
+                <i class="bi bi-hdd-fill text-secondary d-block fs-5 mb-1"></i>~80 MB
+              </div>
+              <div class="col-4 small text-muted">
+                <i class="bi bi-wifi text-primary d-block fs-5 mb-1"></i>Internet required
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+{% if scroll_to_download %}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const el = document.getElementById('download');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
+{% endif %}
+{% endblock %}

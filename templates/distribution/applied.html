@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}Application Received — iSpeye{% endblock %}
+
+{% block content %}
+<div style="margin-top: 72px;" class="py-6 bg-light min-vh-100 d-flex align-items-center">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="bg-white rounded-4 shadow-sm p-4 p-lg-5 text-center">
+
+          <div class="success-circle mx-auto mb-4">
+            <i class="bi bi-check-lg text-white fs-2"></i>
+          </div>
+
+          <h2 class="fw-bold mb-2">Application Received!</h2>
+          <p class="text-muted mb-4">
+            Thanks for your interest in iSpeye. We've received your access request and will review it shortly.
+          </p>
+
+          <div class="text-start bg-light rounded-3 p-4 mb-4">
+            <h6 class="fw-bold mb-3">
+              <i class="bi bi-list-check me-2 text-primary"></i>What happens next?
+            </h6>
+            <div class="d-flex align-items-start gap-3 mb-3">
+              <div class="step-dot flex-shrink-0">1</div>
+              <div class="small text-muted pt-1">Our team reviews your application — usually within 2–3 business days.</div>
+            </div>
+            <div class="d-flex align-items-start gap-3 mb-3">
+              <div class="step-dot flex-shrink-0">2</div>
+              <div class="small text-muted pt-1">You'll receive an email at the address you provided with the outcome.</div>
+            </div>
+            <div class="d-flex align-items-start gap-3">
+              <div class="step-dot flex-shrink-0">3</div>
+              <div class="small text-muted pt-1">Once approved, come back and enter your email to go straight to the download.</div>
+            </div>
+          </div>
+
+          <p class="small text-muted mb-4">
+            Questions? Reach us at
+            <a href="mailto:belmontsolutionsgh@gmail.com" class="text-decoration-none fw-semibold">belmontsolutionsgh@gmail.com</a>
+          </p>
+
+          <a href="{% url 'home' %}" class="btn btn-outline-primary w-100">
+            <i class="bi bi-house me-2"></i>Back to Home
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

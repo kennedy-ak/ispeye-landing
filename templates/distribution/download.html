@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}Download iSpeye{% endblock %}
+
+{% block content %}
+<div style="margin-top: 72px;" class="py-6 bg-light min-vh-100 d-flex align-items-center">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="bg-white rounded-4 shadow-sm p-4 p-lg-5 text-center">
+
+          <div class="success-circle mx-auto mb-4">
+            <i class="bi bi-check-lg text-white fs-2"></i>
+          </div>
+
+          <h2 class="fw-bold mb-1">You're In!</h2>
+          <p class="text-muted mb-4">Access verified for <strong>{{ email }}</strong></p>
+
+          <a href="{{ apk_url }}" download="{{ apk_filename }}"
+             class="btn btn-success btn-lg w-100 mb-2 py-3">
+            <i class="bi bi-download me-2"></i>Download iSpeye v{{ apk_version }}
+          </a>
+          <p class="text-muted small mb-4">Android APK &middot; ~80 MB</p>
+
+          <div class="text-start bg-light rounded-3 p-4 mb-4">
+            <h6 class="fw-bold mb-3">
+              <i class="bi bi-list-ol me-2 text-primary"></i>Installation Steps
+            </h6>
+            <ol class="small text-muted ps-3 mb-0" style="line-height: 2.2;">
+              <li>Tap the download button above — the APK will save to your Downloads folder.</li>
+              <li>Open the file from your notification bar or Files app.</li>
+              <li>If Android warns about installing from unknown sources, tap <strong>Settings</strong>,
+                  enable <strong>Allow from this source</strong>, then go back and tap Install.</li>
+              <li>The app will appear as <strong>iSpeye</strong> on your home screen.</li>
+              <li>Open the app, sign up, and start screening.</li>
+            </ol>
+          </div>
+
+          <div class="alert alert-warning border-0 rounded-3 text-start small mb-4">
+            <i class="bi bi-exclamation-triangle-fill me-1 text-warning"></i>
+            <strong>Medical Disclaimer:</strong> iSpeye is not a medical device and does not diagnose,
+            treat, cure, or prevent any medical condition. Always consult a qualified healthcare professional.
+          </div>
+
+          <div class="d-flex gap-2 mt-2">
+            <a href="{% url 'home' %}" class="btn btn-outline-secondary w-50">
+              <i class="bi bi-house me-2"></i>Home
+            </a>
+            <a href="{% url 'report_bug' %}" class="btn btn-outline-danger w-50">
+              <i class="bi bi-bug me-2"></i>Report a Bug
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

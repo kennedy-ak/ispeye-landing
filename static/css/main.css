@@ -1,0 +1,243 @@
+/* ===== Custom Properties ===== */
+:root {
+  --primary: #0a2640;
+  --primary-hover: #143a5e;
+  --accent: #4a6cf7;
+  --success: #34a853;
+  --text: #1a2235;
+  --text-muted: #6b7280;
+  --border: #e5e7eb;
+  --light-bg: #f8fafc;
+}
+
+/* ===== Global ===== */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  color: var(--text);
+}
+.py-6 { padding-top: 5rem !important; padding-bottom: 5rem !important; }
+
+/* ===== Navbar ===== */
+.ispeye-nav {
+  background: rgba(10, 38, 64, 0.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.ispeye-nav .nav-link {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 0.9rem;
+  transition: color 0.15s;
+}
+.ispeye-nav .nav-link:hover { color: #fff !important; }
+.text-accent { color: #4a6cf7 !important; }
+
+/* ===== Hero ===== */
+.hero-section {
+  background: linear-gradient(135deg, #0a2640 0%, #0d3361 50%, #0f3d75 100%);
+  min-height: 100vh;
+  padding-top: 80px;
+}
+.hero-accent { color: #60a5fa; }
+.text-white-75 { color: rgba(255, 255, 255, 0.78); }
+
+/* Hero illustration */
+.hero-icon-box {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-eye-icon {
+  font-size: 100px;
+  color: rgba(255, 255, 255, 0.92);
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 0 40px rgba(74, 108, 247, 0.7));
+}
+.hero-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(74, 108, 247, 0.35);
+  animation: ringPulse 3s ease-in-out infinite;
+}
+.ring-1 { width: 140px; height: 140px; animation-delay: 0s; }
+.ring-2 { width: 200px; height: 200px; animation-delay: 0.6s; border-color: rgba(74, 108, 247, 0.2); }
+.ring-3 { width: 270px; height: 270px; animation-delay: 1.2s; border-color: rgba(74, 108, 247, 0.1); }
+
+@keyframes ringPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.06); opacity: 0.6; }
+}
+
+/* ===== Stats Bar ===== */
+.stat-number {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.2;
+}
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+
+/* ===== Section Labels & Titles ===== */
+.section-label {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+/* ===== About Section ===== */
+.about-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(10, 38, 64, 0.1);
+  border: 1px solid var(--border);
+}
+.impact-number {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1.1;
+}
+.impact-label {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ===== Feature Cards ===== */
+.feature-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 36px rgba(10, 38, 64, 0.13);
+}
+.feature-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+.bg-primary-soft { background: rgba(10, 38, 64, 0.08); }
+.bg-success-soft { background: rgba(52, 168, 83, 0.1); }
+.bg-warning-soft { background: rgba(245, 166, 35, 0.1); }
+.bg-info-soft   { background: rgba(23, 162, 184, 0.1); }
+
+/* ===== Step Cards ===== */
+.step-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  position: relative;
+  padding-top: 2rem !important;
+}
+.step-number {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 38px;
+  height: 38px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(10, 38, 64, 0.25);
+}
+.step-dot {
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+/* ===== Download Card ===== */
+.download-card {
+  background: #fff;
+  border-radius: 20px;
+  border: 2px solid var(--border);
+  box-shadow: 0 8px 48px rgba(10, 38, 64, 0.13);
+}
+
+/* ===== Success Circle ===== */
+.success-circle {
+  width: 68px;
+  height: 68px;
+  background: var(--success);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(52, 168, 83, 0.35);
+}
+
+/* ===== Footer ===== */
+.ispeye-footer {
+  background: #0c1e30;
+  color: rgba(255, 255, 255, 0.75);
+}
+.ispeye-footer .text-muted { color: rgba(255, 255, 255, 0.45) !important; }
+.footer-link {
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.footer-link:hover { color: #fff; }
+
+/* ===== Bug Report ===== */
+.bug-circle {
+  width: 68px;
+  height: 68px;
+  background: #d93025;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(217, 48, 37, 0.35);
+}
+
+/* ===== Bootstrap Overrides ===== */
+.btn-primary { background: var(--primary); border-color: var(--primary); }
+.btn-primary:hover { background: var(--primary-hover); border-color: var(--primary-hover); }
+.btn-outline-primary { color: var(--primary); border-color: var(--primary); }
+.btn-outline-primary:hover { background: var(--primary); border-color: var(--primary); }
+.form-control:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.18);
+}
+.rounded-4 { border-radius: 16px !important; }

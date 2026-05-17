@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+{% block title %}Report a Bug — iSpeye Beta{% endblock %}
+
+{% block content %}
+<div style="margin-top: 72px;" class="py-6 bg-light min-vh-100">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+
+        <div class="mb-4">
+          <a href="{% url 'home' %}" class="text-decoration-none text-muted small">
+            <i class="bi bi-arrow-left me-1"></i>Back to Home
+          </a>
+        </div>
+
+        <div class="bg-white rounded-4 shadow-sm p-4 p-lg-5">
+
+          <div class="mb-4">
+            <span class="section-label">Beta Feedback</span>
+            <h2 class="fw-bold text-primary mb-2">
+              <i class="bi bi-bug-fill text-danger me-2"></i>Report a Bug
+            </h2>
+            <p class="text-muted">
+              Found something broken, slow, confusing, or just off? Tell us — every report goes
+              straight to the admin panel and helps us fix it faster. Include a screenshot if you can.
+            </p>
+          </div>
+
+          <form method="post" enctype="multipart/form-data" novalidate>
+            {% csrf_token %}
+
+            <div class="row gy-3">
+
+              <div class="col-md-6">
+                <label class="form-label fw-semibold" for="{{ form.reporter_name.id_for_label }}">
+                  {{ form.reporter_name.label }} <span class="text-danger">*</span>
+                </label>
+                {{ form.reporter_name }}
+                {% for error in form.reporter_name.errors %}
+                  <div class="text-danger small mt-1"><i class="bi bi-exclamation-circle me-1"></i>{{ error }}</div>
+                {% endfor %}
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label fw-semibold" for="{{ form.reporter_email.id_for_label }}">
+                  {{ form.reporter_email.label }} <span class="text-danger">*</span>
+                </label>
+                {{ form.reporter_email }}
+                {% for error in form.reporter_email.errors %}
+                  <div class="text-danger small mt-1"><i class="bi bi-exclamation-circle me-1"></i>{{ error }}</div>
+                {% endfor %}
+              </div>
+
+              <div class="col-12">
+                <label class="form-label fw-semibold" for="{{ form.title.id_for_label }}">
+                  {{ form.title.label }} <span class="text-danger">*</span>
+                </label>
+                {{ form.title }}
+                {% for error in form.title.errors %}
+                  <div class="text-danger small mt-1"><i class="bi bi-exclamation-circle me-1"></i>{{ error }}</div>
+                {% endfor %}
+              </div>
+
+              <div class="col-12">
+                <label class="form-label fw-semibold" for="{{ form.severity.id_for_label }}">
+                  {{ form.severity.label }} <span class="text-danger">*</span>
+                </label>
+                {{ form.severity }}
+                <div class="mt-2 d-flex flex-wrap gap-2">
+                  <span class="badge" style="background:#34a853">Low — minor inconvenience</span>
+                  <span class="badge" style="background:#f5a623">Medium — feature not working</span>
+                  <span class="badge" style="background:#ff6b35">High — app crashes</span>
+                  <span class="badge" style="background:#d93025">Critical — data loss / security</span>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label class="form-label fw-semibold" for="{{ form.description.id_for_label }}">
+                  {{ form.description.label }} <span class="text-danger">*</span>
+                </label>
+                {{ form.description }}
+                <div class="form-text">Be specific — what did you see, what did you expect?</div>
+                {% for error in form.description.errors %}
+                  <div class="text-danger small mt-1"><i class="bi bi-exclamation-circle me-1"></i>{{ error }}</div>
+                {% endfor %}
+              </div>
+
+              <div class="col-12">
+                <label class="form-label fw-semibold" for="{{ form.steps_to_reproduce.id_for_label }}">
+                  {{ form.steps_to_reproduce.label }}
+                </label>
+                {{ form.steps_to_reproduce }}
+                <div class="form-text">Step-by-step makes it much easier for us to reproduce and fix.</div>
+              </div>
+
+              <div class="col-12">
+                <label class="form-label fw-semibold" for="{{ form.device_model.id_for_label }}">
+                  {{ form.device_model.label }}
+                </label>
+                {{ form.device_model }}
+              </div>
+
+              <div class="col-12">
+                <label class="form-label fw-semibold" for="{{ form.screenshot.id_for_label }}">
+                  {{ form.screenshot.label }}
+                </label>
+                {{ form.screenshot }}
+                <div class="form-text">A screenshot of the bug or error message is very helpful. JPG, PNG accepted.</div>
+                {% for error in form.screenshot.errors %}
+                  <div class="text-danger small mt-1"><i class="bi bi-exclamation-circle me-1"></i>{{ error }}</div>
+                {% endfor %}
+              </div>
+
+            </div>
+
+            <hr class="my-4" />
+
+            <button type="submit" class="btn btn-danger btn-lg w-100">
+              <i class="bi bi-send me-2"></i>Submit Bug Report
+            </button>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

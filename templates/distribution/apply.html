@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block title %}Request Access — iSpeye{% endblock %}
+
+{% block content %}
+<div style="margin-top: 72px;" class="py-6 bg-light min-vh-100">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7">
+
+        <div class="mb-4">
+          <a href="{% url 'home' %}#download" class="text-decoration-none text-muted small">
+            <i class="bi bi-arrow-left me-1"></i>Back to Home
+          </a>
+        </div>
+
+        <div class="bg-white rounded-4 shadow-sm p-4 p-lg-5">
+          <div class="mb-4">
+            <span class="section-label">Closed Beta</span>
+            <h2 class="fw-bold text-primary mb-2">Request Access to iSpeye</h2>
+            <p class="text-muted">
+              Tell us a bit about yourself and your use case. We'll review your request and
+              notify you by email — usually within a few days.
+            </p>
+          </div>
+
+          <form method="post" novalidate>
+            {% csrf_token %}
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold" for="{{ form.name.id_for_label }}">
+                Full Name <span class="text-danger">*</span>
+              </label>
+              {{ form.name }}
+              {% for error in form.name.errors %}
+                <div class="text-danger small mt-1"><i class="bi bi-exclamation-circle me-1"></i>{{ error }}</div>
+              {% endfor %}
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold" for="{{ form.email.id_for_label }}">
+                Email Address <span class="text-danger">*</span>
+              </label>
+              {{ form.email }}
+              {% for error in form.email.errors %}
+                <div class="text-danger small mt-1"><i class="bi bi-exclamation-circle me-1"></i>{{ error }}</div>
+              {% endfor %}
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold" for="{{ form.institution.id_for_label }}">
+                {{ form.institution.label }}
+              </label>
+              {{ form.institution }}
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label fw-semibold" for="{{ form.reason.id_for_label }}">
+                {{ form.reason.label }} <span class="text-danger">*</span>
+              </label>
+              {{ form.reason }}
+              {% for error in form.reason.errors %}
+                <div class="text-danger small mt-1"><i class="bi bi-exclamation-circle me-1"></i>{{ error }}</div>
+              {% endfor %}
+            </div>
+
+            <div class="alert alert-info border-0 rounded-3 small mb-4">
+              <i class="bi bi-info-circle-fill me-2"></i>
+              iSpeye is a research-stage screening tool, <strong>not a medical device</strong>.
+              It must not replace professional clinical diagnosis or treatment decisions.
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg w-100">
+              <i class="bi bi-send me-2"></i>Submit Request
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
